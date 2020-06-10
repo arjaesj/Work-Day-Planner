@@ -71,7 +71,6 @@ workPlanner.forEach(function() {
         "aria-label": "With textarea"
     });
     inputGroup.append(hourPlan);
-    //resaerch how to add multiple attributes 
 
     // If else statement to change CSS properties of user plan input with regards to time
     if (workPlanner.timeText < moment().format("h:mm:ss a")) {
