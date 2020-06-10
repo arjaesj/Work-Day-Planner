@@ -65,8 +65,13 @@ workPlanner.forEach(function() {
     hourDisplay.append(hourText);
 
     // Create textarea for user plan input
-    var hourPlan = $("<textarea>").attr({ "class": "form-control" }, { "placeholder": "What do you want to do at this time?" }, { "aria-label": "With textarea" });
-    hourDisplay.append(hourPlan);
+    var hourPlan = $("<textarea>").attr({
+        class: "form-control",
+        placeholder: "What do you want to do at this time?",
+        "aria-label": "With textarea"
+    });
+    inputGroup.append(hourPlan);
+    //resaerch how to add multiple attributes 
 
     // If else statement to change CSS properties of user plan input with regards to time
     if (workPlanner.timeText < moment().format("h:mm:ss a")) {
@@ -76,6 +81,8 @@ workPlanner.forEach(function() {
     } else if (workPlanner.time > moment().format("h:mm:ss a")); {
         hourPlan.attr("class", "form-control future");
     }
+
+
 
     // // Create a checkbox for completion
     // // Create a save button
