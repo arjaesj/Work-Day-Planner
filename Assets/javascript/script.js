@@ -67,24 +67,24 @@ $(document).ready(function() {
     // Save workPlanner object to local storage and convert to strings
     function savePlannerObj() {
         localStorage.setItem("workPlanner", JSON.stringify(workPlanner));
-    };
+    }
 
     // Persist user input plan
     function displayUserPlan() {
         workPlanner.forEach(function(_hourPlan) {
             $(`#${_hourPlan.id}`).val(_hourPlan.userPlan);
         });
-    };
+    }
 
     // Get saved item from local storage
     function parsePlannerObj() {
         var savedData = JSON.parse(localStorage.getItem("workPlanner"));
         if (savedData) {
             workPlanner = savedData;
-        };
+        }
         savePlannerObj();
         displayUserPlan();
-    };
+    }
 
     // Append html elements that make up the planner
     workPlanner.forEach(function(currentHour) {
@@ -125,7 +125,7 @@ $(document).ready(function() {
             hourPlan.attr({
                 "class": "form-control past"
             });
-        };
+        }
 
         // Create div sibling of hourDisplay for the completion checkbox & save button
         var checkSavBtn = $("<div>").attr("class", "input-group-append");
@@ -161,7 +161,7 @@ $(document).ready(function() {
         });
         // Resave to localstorage
         savePlannerObj();
-    };
+    }
     if (moment().format("HHmm") === "0001") {
         resetPlanner();
         parsePlannerObj();
